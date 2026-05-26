@@ -6,13 +6,10 @@ import {
   referenceLogoDimensions,
   referenceLogoZoomStyle,
 } from "@/lib/reference-logo-styles";
-import { referenceLogoUrls } from "@/lib/reference-logo-url.server";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export function References() {
   const { references } = siteContent;
-  const { entries } = references;
-  const logoUrls = referenceLogoUrls(entries.map((entry) => entry.logo));
 
   return (
     <section id="referanslar" className="scroll-mt-24 bg-cream py-24 lg:py-32">
@@ -25,7 +22,7 @@ export function References() {
           className="mx-auto"
         />
         <ul className="mt-12 grid grid-cols-2 border border-border bg-cream lg:grid-cols-4">
-          {entries.map((entry) => {
+          {references.entries.map((entry) => {
             const scale = entry.logoScale ?? 1;
             const { width, height } = referenceLogoDimensions(scale);
 
@@ -40,11 +37,11 @@ export function References() {
                   style={referenceLogoZoomStyle(scale, entry.logoWide)}
                 >
                   <Image
-                    src={logoUrls.get(entry.logo) ?? entry.logo}
+                    src={entry.logo}
                     alt={entry.logoAlt ?? entry.name}
                     width={width}
                     height={height}
-                    unoptimized
+                    sizes="(max-width: 1024px) 50vw, 25vw"
                     className={referenceLogoClass(scale, entry.logoWide)}
                   />
                 </div>

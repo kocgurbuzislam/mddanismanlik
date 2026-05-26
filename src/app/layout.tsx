@@ -33,6 +33,18 @@ export const metadata: Metadata = {
     description,
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        alt: brand.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description,
+    images: ["/logo.png"],
   },
 };
 

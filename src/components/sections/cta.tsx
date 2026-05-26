@@ -22,13 +22,16 @@ import {
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 
+const contactRowClass =
+  "flex w-full min-w-0 items-center gap-4 rounded-2xl border border-border/70 bg-white/50 px-4 py-4 text-left transition-all duration-300 hover:border-accent/30 hover:bg-white";
+
 type ContactRowProps = {
   icon: ReactNode;
   label: string;
   value: string;
-  href?: string;
+  href: string;
   external?: boolean;
-  showChevron?: boolean;
+  action?: ReactNode;
 };
 
 function ContactRow({
@@ -37,65 +40,68 @@ function ContactRow({
   value,
   href,
   external,
-  showChevron = true,
+  action,
 }: ContactRowProps) {
-  const content = (
-    <>
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-        {icon}
-      </span>
+  const iconEl = (
+    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+      {icon}
+    </span>
+  );
 
-      <span className="min-w-0 flex-1">
-        <span className="block text-xs font-medium text-muted">
-          {label}
+  const labelEl = (
+    <span className="block text-xs font-medium text-muted">{label}</span>
+  );
+
+  if (action) {
+    return (
+      <div className={contactRowClass}>
+        {iconEl}
+        <span className="min-w-0 flex-1">
+          {labelEl}
+          <a
+            href={href}
+            className="block truncate text-sm font-semibold text-foreground transition-colors hover:text-accent"
+          >
+            {value}
+          </a>
         </span>
+        {action}
+      </div>
+    );
+  }
 
+  return (
+    <a
+      href={href}
+      className={contactRowClass}
+      {...(external
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : undefined)}
+    >
+      {iconEl}
+      <span className="min-w-0 flex-1">
+        {labelEl}
         <span className="block truncate text-sm font-semibold text-foreground">
           {value}
         </span>
       </span>
-
-      {href && showChevron && (
-        <ChevronRight
-          className="h-5 w-5 shrink-0 text-muted/60"
-          strokeWidth={1.75}
-          aria-hidden
-        />
-      )}
-    </>
+      <ChevronRight
+        className="h-5 w-5 shrink-0 text-muted/60"
+        strokeWidth={1.75}
+        aria-hidden
+      />
+    </a>
   );
-
-  const rowClass =
-    "flex w-full items-center gap-4 rounded-2xl border border-border/70 bg-white/50 px-4 py-4 text-left transition-all duration-300 hover:border-accent/30 hover:bg-white";
-
-  if (href) {
-    return (
-      <a
-        href={href}
-        className={rowClass}
-        {...(external
-          ? {
-              target: "_blank",
-              rel: "noopener noreferrer",
-            }
-          : {})}
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return <div className={rowClass}>{content}</div>;
 }
+
+const whatsAppButtonClass =
+  "hidden shrink-0 items-center gap-2 rounded-xl border border-accent/25 px-4 py-2 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-white sm:inline-flex";
 
 export function Cta() {
   const { cta, contact, brand } = siteContent;
 
   return (
-    <section
-      id="iletisim"
-      className="scroll-mt-24 bg-cream py-20 lg:py-24"
-    >
+    <section id="iletisim" className="scroll-mt-24 bg-cream py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeading
           label="İletişim"
@@ -108,11 +114,9 @@ export function Cta() {
 
         <div className="mt-14 w-full min-w-0 overflow-hidden rounded-[2rem] border border-border/80 bg-white/70 shadow-[0_30px_80px_rgba(0,0,0,0.06)] backdrop-blur">
           <div className="grid w-full min-w-0 grid-cols-1 overflow-hidden lg:grid-cols-[0.92fr_1.08fr]">
-            {/* LEFT */}
             <div className="w-full min-w-0 border-b border-border/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
               <div className="inline-flex items-center gap-2 text-accent">
                 <Star className="h-4 w-4 fill-current" />
-
                 <span className="text-xs font-bold uppercase tracking-[0.22em]">
                   {brand.name}
                 </span>
@@ -123,37 +127,24 @@ export function Cta() {
               </p>
 
               <div className="mt-8 space-y-3">
-                {/* PHONE */}
-                <div className="flex w-full min-w-0 items-center gap-4 rounded-2xl border border-border/70 bg-white/50 px-4 py-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                    <Phone className="h-4 w-4" />
-                  </span>
-
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-xs font-medium text-muted">
-                      Telefon
-                    </span>
-
+                <ContactRow
+                  icon={<Phone className="h-4 w-4" />}
+                  label="Telefon"
+                  value={contact.phone}
+                  href={telHref(contact.phone)}
+                  action={
                     <a
-                      href={telHref(contact.phone)}
-                      className="block truncate text-sm font-semibold text-foreground transition-colors hover:text-accent"
+                      href={whatsappHref(contact.phone)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={whatsAppButtonClass}
                     >
-                      {contact.phone}
+                      <WhatsAppIcon />
+                      WhatsApp&apos;tan Yaz
                     </a>
-                  </span>
+                  }
+                />
 
-                  <a
-                    href={whatsappHref(contact.phone)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hidden shrink-0 items-center gap-2 rounded-xl border border-accent/25 px-4 py-2 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-white sm:inline-flex"
-                  >
-                    <WhatsAppIcon />
-                    WhatsApp&apos;tan Yaz
-                  </a>
-                </div>
-
-                {/* EMAIL */}
                 <ContactRow
                   icon={<Mail className="h-4 w-4" />}
                   label="E-posta"
@@ -161,7 +152,6 @@ export function Cta() {
                   href={mailtoHref(contact.email)}
                 />
 
-                {/* INSTAGRAM */}
                 <ContactRow
                   icon={<InstagramIcon />}
                   label="Instagram"
@@ -170,7 +160,6 @@ export function Cta() {
                   external
                 />
 
-                {/* ADDRESS */}
                 <ContactRow
                   icon={<MapPin className="h-4 w-4" />}
                   label="Adres"
@@ -180,7 +169,6 @@ export function Cta() {
                 />
               </div>
 
-              {/* BUTTONS */}
               <div className="mt-8 grid w-full min-w-0 gap-3 sm:grid-cols-2">
                 <Button href={telHref(contact.phone)} variant="primary">
                   <Phone className="h-4 w-4" />
@@ -198,28 +186,24 @@ export function Cta() {
               </div>
             </div>
 
-            {/* RIGHT */}
             <div className="w-full min-w-0 p-6 sm:p-8 lg:p-10">
               <div className="w-full min-w-0 overflow-hidden rounded-[1.75rem] border border-border/80 bg-white shadow-sm">
-                {/* MAP */}
                 <div className="h-[420px] w-full min-w-0 overflow-hidden lg:h-[520px]">
                   <iframe
                     title={`${brand.name} konum haritası`}
                     src={mapsEmbedSrc(contact.address)}
-                    className="h-full w-full border-0 max-w-full"
+                    className="h-full w-full max-w-full border-0"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     allowFullScreen
                   />
                 </div>
 
-                {/* FOOTER */}
                 <div className="flex w-full min-w-0 flex-col gap-4 border-t border-border/70 bg-white/90 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-sm font-semibold text-foreground">
                       {contact.address}
                     </p>
-
                     <p className="text-xs text-muted">
                       Haritada konumu görüntüleyin.
                     </p>

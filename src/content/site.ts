@@ -90,7 +90,7 @@ export const siteContent = {
   cta: {
     headline: "Birlikte hayal edelim, birlikte yaşatalım.",
     description:
-      "Gıda sektöründe fark yaratmak, yeni bir işletme kurmak veya mevcut işletmenizi profesyonelleştirmek istiyorsanız — birlikte çalışalım.",
+      "Gıda sektöründe fark yaratmak, yeni bir işletme kurmak veya mevcut işletmenizi profesyonelleştirmek istiyorsanız, birlikte çalışalım.",
   },
   description: `${foundedYear}'den beri restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye uçtan uca danışmanlık. ${brandName}.`,
 } satisfies SiteContent;
