@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { siteContent } from "@/content/site";
 import { navLinks } from "@/config/navigation";
 import { telHref } from "@/lib/contact-links";
@@ -12,6 +13,7 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,6 +31,15 @@ export function Header() {
 
   const { brand, contact } = siteContent;
 
+  const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+
+    if (pathname === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -41,6 +52,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         <Link
           href="/"
+          onClick={handleLogoClick}
           className="group relative z-10 flex h-12 w-[150px] items-center sm:h-14 sm:w-[180px] lg:h-16 lg:w-[225px]"
         >
           <BrandLogo className="transition-opacity group-hover:opacity-90" />
