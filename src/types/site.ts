@@ -1,18 +1,15 @@
-export type ProcessStep = {
+type ProcessStep = {
   id: string;
   title: string;
   description: string;
   icon: string;
 };
 
-/** Logo grid'de gösterilen veya eklenecek referans kaydı */
+/** Logo grid'de gösterilen referans kaydı */
 export type ReferenceEntry = {
   id: string;
   name: string;
-  location?: string;
-  group?: string;
-  note?: string;
-  logo?: string;
+  logo: string;
   logoAlt?: string;
   logoScale?: number;
   logoWide?: boolean;
@@ -25,7 +22,6 @@ export type SiteContent = {
     foundedYear: number;
     slogan: string;
     logo: string;
-    logoAlt: string;
   };
   contact: {
     name: string;
@@ -42,6 +38,7 @@ export type SiteContent = {
   };
   about: {
     title: string;
+    subtitle: string;
     paragraphs: string[];
   };
   process: {
@@ -52,16 +49,13 @@ export type SiteContent = {
   references: {
     title: string;
     subtitle: string;
-    career: { entries: ReferenceEntry[] };
-    consultancy: { entries: ReferenceEntry[] };
+    entries: ReferenceEntry[];
   };
   cta: {
     headline: string;
     description: string;
-    closing: string;
   };
   seo: {
-    title: string;
     description: string;
   };
 };

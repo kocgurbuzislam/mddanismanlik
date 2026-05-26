@@ -6,7 +6,7 @@ import { siteContent } from "@/content/site";
 import { navLinks } from "@/config/navigation";
 
 export function Footer() {
-  const { brand, contact, cta } = siteContent;
+  const { brand, contact } = siteContent;
   const year = new Date().getFullYear();
 
   return (
@@ -16,7 +16,7 @@ export function Footer() {
           <div>
             <BrandLogo size="footer" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
-              {cta.closing}
+              {brand.name} ile tanışın.
             </p>
           </div>
 

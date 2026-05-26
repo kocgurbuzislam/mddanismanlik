@@ -2,15 +2,54 @@ import Image from "next/image";
 import { ArrowDown, Phone } from "lucide-react";
 import { siteContent } from "@/content/site";
 import { Button } from "@/components/ui/button";
+import { cn, yearsSince } from "@/lib/utils";
 
-const stats = [
-  { value: "1997", label: "Kuruluş yılı" },
-  { value: "28+", label: "Yıl deneyim" },
-  { value: "100+", label: "Tamamlanan proje" },
-];
+type Stat = { value: string; label: string };
+
+function HeroStats({
+  stats,
+  compact = false,
+  className,
+}: {
+  stats: Stat[];
+  compact?: boolean;
+  className?: string;
+}) {
+  return (
+    <div className={cn("grid grid-cols-3 gap-4", className)}>
+      {stats.map((stat) => (
+        <div key={stat.label} className={compact ? "text-center" : undefined}>
+          <p
+            className={cn(
+              "font-[family-name:var(--font-instrument)] text-accent",
+              compact ? "text-2xl" : "text-3xl",
+            )}
+          >
+            {stat.value}
+          </p>
+          <p
+            className={cn(
+              "mt-1 text-muted",
+              compact ? "text-[10px]" : "text-xs",
+            )}
+          >
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function Hero() {
   const { brand, contact } = siteContent;
+  const experienceYears = yearsSince(brand.foundedYear);
+
+  const stats: Stat[] = [
+    { value: String(brand.foundedYear), label: "Kuruluş yılı" },
+    { value: `${experienceYears}+`, label: "Yıl deneyim" },
+    { value: "100+", label: "Tamamlanan proje" },
+  ];
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-cream">
@@ -55,29 +94,15 @@ export function Hero() {
               Restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye,
               eğitimden sürdürülebilir büyümeye uçtan uca danışmanlık.
             </p>
-            <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-6">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="font-[family-name:var(--font-instrument)] text-3xl text-accent">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-xs text-muted">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+            <HeroStats stats={stats} className="mt-6 border-t border-border pt-6" />
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-3 gap-4 rounded-2xl border border-border bg-cream/90 p-5 shadow-[var(--shadow)] backdrop-blur-md lg:hidden">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-[family-name:var(--font-instrument)] text-2xl text-accent">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-[10px] text-muted">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        <HeroStats
+          stats={stats}
+          compact
+          className="mt-12 rounded-2xl border border-border bg-cream/90 p-5 shadow-[var(--shadow)] backdrop-blur-md lg:hidden"
+        />
       </div>
     </section>
   );

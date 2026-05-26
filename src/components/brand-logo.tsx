@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { siteContent } from "@/content/site";
-import { referenceLogoUrl } from "@/lib/reference-logo";
 import { cn } from "@/lib/utils";
 
 type BrandLogoProps = {
@@ -14,8 +13,8 @@ export function BrandLogo({ className, size = "header" }: BrandLogoProps) {
 
   return (
     <Image
-      src={referenceLogoUrl(brand.logo)}
-      alt={brand.logoAlt}
+      src={brand.logo}
+      alt={brand.name}
       width={tall ? 450 : 360}
       height={tall ? 300 : 240}
       unoptimized

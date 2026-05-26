@@ -17,17 +17,20 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+const { brand, seo } = siteContent;
+const siteTitle = `${brand.name} | ${brand.tagline}`;
+
 export const metadata: Metadata = {
-  title: siteContent.seo.title,
-  description: siteContent.seo.description,
+  title: siteTitle,
+  description: seo.description,
   metadataBase: new URL("https://md-danismanlik.com"),
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: siteContent.seo.title,
-    description: siteContent.seo.description,
+    title: siteTitle,
+    description: seo.description,
     locale: "tr_TR",
     type: "website",
   },

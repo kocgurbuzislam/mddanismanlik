@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { siteContent } from "@/content/site";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { yearsSince } from "@/lib/utils";
 
 export function About() {
-  const { about } = siteContent;
+  const { about, brand } = siteContent;
+  const experienceYears = yearsSince(brand.foundedYear);
 
   return (
     <section id="hakkimizda" className="scroll-mt-24 bg-cream py-24 lg:py-32">
@@ -21,22 +23,18 @@ export function About() {
             </div>
             <div className="absolute -bottom-6 -right-4 rounded-2xl border border-border bg-background px-6 py-5 shadow-lg sm:-right-8">
               <p className="font-[family-name:var(--font-instrument)] text-4xl text-accent">
-                28+
+                {experienceYears}+
               </p>
               <p className="mt-1 text-sm font-medium text-muted">yıllık sektör deneyimi</p>
             </div>
           </div>
 
           <div>
-            <SectionHeading
-              label="Hakkımızda"
-              title={about.title}
-              subtitle="Türkiye'nin gıda ve içecek sektöründe güvenilir danışmanlık ortağınız."
-            />
+            <SectionHeading title={about.title} subtitle={about.subtitle} />
 
             <div className="mt-8 space-y-5">
-              {about.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)} className="text-base leading-relaxed text-muted">
+              {about.paragraphs.map((paragraph, index) => (
+                <p key={index} className="text-base leading-relaxed text-muted">
                   {paragraph}
                 </p>
               ))}

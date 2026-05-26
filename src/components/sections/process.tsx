@@ -1,6 +1,28 @@
+import {
+  Building2,
+  GraduationCap,
+  PenTool,
+  Settings,
+  Sparkles,
+  TrendingUp,
+  type LucideIcon,
+} from "lucide-react";
 import { siteContent } from "@/content/site";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { ProcessIcon } from "@/components/sections/process-icon";
+
+const processIcons: Record<string, LucideIcon> = {
+  sparkles: Sparkles,
+  "pen-tool": PenTool,
+  "building-2": Building2,
+  "graduation-cap": GraduationCap,
+  settings: Settings,
+  "trending-up": TrendingUp,
+};
+
+function ProcessIcon({ name, className }: { name: string; className?: string }) {
+  const Icon = processIcons[name] ?? Sparkles;
+  return <Icon className={className} strokeWidth={1.75} />;
+}
 
 export function Process() {
   const { process } = siteContent;

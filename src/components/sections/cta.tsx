@@ -210,7 +210,7 @@ export function Cta() {
                 <div className="flex w-full min-w-0 flex-col gap-4 border-t border-border/70 bg-white/90 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-sm font-semibold text-foreground">
-                      İstanbul, Türkiye
+                      {contact.address}
                     </p>
 
                     <p className="text-xs text-muted">
