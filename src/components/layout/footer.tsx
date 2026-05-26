@@ -1,0 +1,89 @@
+import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { InstagramIcon } from "@/components/icons/instagram";
+import { BrandLogo } from "@/components/brand-logo";
+import { siteContent } from "@/content/site";
+import { navLinks } from "@/config/navigation";
+
+export function Footer() {
+  const { brand, contact, cta } = siteContent;
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="border-t border-border bg-cream">
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <BrandLogo size="footer" />
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+              {cta.closing}
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <ul className="flex flex-col gap-3 text-sm">
+              <li>
+                <a
+                  href={contact.phoneHref}
+                  className="inline-flex items-center gap-2 font-semibold text-foreground transition-colors hover:text-accent"
+                >
+                  <Phone className="h-4 w-4 text-accent" />
+                  {contact.phone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={contact.emailHref}
+                  className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent"
+                >
+                  <Mail className="h-4 w-4 text-accent" />
+                  {contact.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={contact.instagramHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent"
+                >
+                  <InstagramIcon className="text-accent" />
+                  {contact.instagram}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={contact.mapHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent"
+                >
+                  <MapPin className="h-4 w-4 text-accent" />
+                  {contact.address}
+                </a>
+              </li>
+            </ul>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-2 border-t border-border pt-8 text-xs text-muted sm:flex-row sm:justify-between">
+          <p>
+            © {year} {brand.name}. Tüm hakları saklıdır.
+          </p>
+          <p>{brand.tagline}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
