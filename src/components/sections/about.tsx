@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { siteContent } from "@/content/site";
+import { ExperienceBadge } from "@/components/ui/experience-badge";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { yearsSince } from "@/lib/utils";
+import { getBrandExperience } from "@/lib/brand-stats";
 
 export function About() {
   const { about, brand } = siteContent;
-  const experienceYears = yearsSince(brand.foundedYear);
+  const { years } = getBrandExperience(brand.foundedYear);
 
   return (
     <section id="hakkimizda" className="scroll-mt-24 bg-cream py-24 lg:py-32">
@@ -21,11 +22,8 @@ export function About() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="absolute -bottom-6 -right-4 rounded-2xl border border-border bg-background px-6 py-5 shadow-lg sm:-right-8">
-              <p className="font-[family-name:var(--font-instrument)] text-4xl text-accent">
-                {experienceYears}+
-              </p>
-              <p className="mt-1 text-sm font-medium text-muted">yıllık sektör deneyimi</p>
+            <div className="absolute -bottom-6 -right-4 sm:-right-8">
+              <ExperienceBadge years={years} />
             </div>
           </div>
 

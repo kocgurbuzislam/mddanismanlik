@@ -4,14 +4,15 @@ import {
   referenceLogoCellClass,
   referenceLogoClass,
   referenceLogoDimensions,
-  referenceLogoUrl,
   referenceLogoZoomStyle,
-} from "@/lib/reference-logo";
+} from "@/lib/reference-logo-styles";
+import { referenceLogoUrls } from "@/lib/reference-logo-url.server";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export function References() {
   const { references } = siteContent;
   const { entries } = references;
+  const logoUrls = referenceLogoUrls(entries.map((entry) => entry.logo));
 
   return (
     <section id="referanslar" className="scroll-mt-24 bg-cream py-24 lg:py-32">
@@ -39,7 +40,7 @@ export function References() {
                   style={referenceLogoZoomStyle(scale, entry.logoWide)}
                 >
                   <Image
-                    src={referenceLogoUrl(entry.logo)}
+                    src={logoUrls.get(entry.logo) ?? entry.logo}
                     alt={entry.logoAlt ?? entry.name}
                     width={width}
                     height={height}

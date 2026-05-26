@@ -1,13 +1,15 @@
 import type { SiteContent } from "@/types/site";
+import { referenceEntries } from "@/content/references";
 
 const phone = "+90 535 259 46 56";
 const email = "info@md-danismanlik.com";
 const address = "İstanbul, Türkiye";
 const foundedYear = 1997;
+const brandName = "MD Danışmanlık";
 
-export const siteContent: SiteContent = {
+export const siteContent = {
   brand: {
-    name: "MD Danışmanlık",
+    name: brandName,
     tagline: "Gıda & İçecek Sektörü Danışmanlığı",
     foundedYear,
     slogan:
@@ -17,15 +19,10 @@ export const siteContent: SiteContent = {
   contact: {
     name: "Mehmet Doğan",
     phone,
-    phoneHref: `tel:${phone.replace(/\s/g, "")}`,
-    whatsappHref: `https://wa.me/${phone.replace(/\D/g, "")}`,
     email,
-    emailHref: `mailto:${email}`,
     instagram: "@md_danismanlik",
     instagramHref: "https://www.instagram.com/md_danismanlik/",
     address,
-    mapHref: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`,
-    mapEmbedSrc: `https://www.google.com/maps?q=${encodeURIComponent(address)}&hl=tr&z=11&output=embed`,
   },
   about: {
     title: "Hakkımızda",
@@ -88,158 +85,12 @@ export const siteContent: SiteContent = {
   references: {
     title: "Referanslarımız",
     subtitle: `${foundedYear}'den bu yana Türkiye ve yurtdışında önde gelen otel, restoran ve işletmelerde edinilen deneyim.`,
-    entries: [
-      {
-        id: "hillside",
-        name: "Hillside Su Hotel",
-        logo: "/references/hotel-su.png",
-        logoAlt: "Hotel SU",
-        logoWide: true,
-        logoScale: 1.4,
-      },
-      {
-        id: "adam-eve",
-        name: "Adam & Eve Hotel",
-        logo: "/references/adam-eve.png",
-        logoScale: 1.25,
-      },
-      {
-        id: "ritz-carlton",
-        name: "The Ritz-Carlton Hotel",
-        logo: "/references/ritz-carlton.png",
-        logoAlt: "The Ritz-Carlton",
-      },
-      {
-        id: "w-hotel",
-        name: "W Hotel",
-        logo: "/references/w-hotel.png",
-        logoAlt: "W Istanbul",
-        logoScale: 1.3,
-      },
-      {
-        id: "rixos",
-        name: "Rixos Pera ve Elysium Otelleri",
-        logo: "/references/rixos.png",
-        logoAlt: "Rixos Hotels",
-        logoWide: true,
-        logoScale: 1.4,
-      },
-      {
-        id: "duble-meze",
-        name: "Duble Meze Bar Pera, Celal",
-        logo: "/references/duble-meze.png",
-        logoAlt: "Duble Meze Pera",
-        logoWide: true,
-        logoScale: 1.4,
-      },
-      {
-        id: "cevahir",
-        name: "Biz Cevahir Hotel",
-        logo: "/references/cevahir.png",
-        logoAlt: "Biz Hotel",
-        logoWide: true,
-        logoScale: 1.5,
-      },
-      {
-        id: "nusret",
-        name: "Nusr-Et Steakhouse",
-        logo: "/references/nusret.png",
-        logoScale: 1.35,
-      },
-      {
-        id: "elexus",
-        name: "Elexus Hotel",
-        logo: "/references/elexus.png",
-        logoAlt: "Elexus Hotel Resort Spa Girne",
-        logoScale: 1.3,
-      },
-      {
-        id: "km-hilton",
-        name: "Kahramanmaraş Hilton Hotel",
-        logo: "/references/kahramanmaras-hilton.png",
-        logoAlt: "Hampton by Hilton Kahramanmaraş",
-        logoScale: 1.25,
-      },
-      {
-        id: "arts-hotel",
-        name: "Arts Hotel",
-        logo: "/references/arts-hotel.png",
-        logoWide: true,
-        logoScale: 1.45,
-      },
-      {
-        id: "mavi-beyaz",
-        name: "Mavi Beyaz Restaurant",
-        logo: "/references/mavi-beyaz.png",
-        logoWide: true,
-        logoScale: 1.4,
-      },
-      {
-        id: "cephanelik",
-        name: "Cephanelik Hotel",
-        logo: "/references/cephanelik.png",
-        logoAlt: "Mahalle Cephanelik",
-        logoScale: 1.35,
-      },
-      {
-        id: "borovi",
-        name: "Borovi Hotel",
-        logo: "/references/borovi.png",
-        logoAlt: "Borovi Forest Resort",
-      },
-      {
-        id: "windsor",
-        name: "Windsor Hotel",
-        logo: "/references/windsor.png",
-        logoAlt: "Windsor Hotel & Convention Center Istanbul",
-        logoWide: true,
-        logoScale: 1.6,
-      },
-      {
-        id: "qoala",
-        name: "Qoala Beach Rest",
-        logo: "/references/qoala-beach.png",
-        logoAlt: "Qoala Beach Club",
-        logoWide: true,
-        logoScale: 1.55,
-      },
-      {
-        id: "zihni",
-        name: "Zihni Bar Restaurant",
-        logo: "/references/zihni.png",
-        logoAlt: "Zihni Pub",
-        logoWide: true,
-        logoScale: 1.5,
-      },
-      {
-        id: "anadolu-isi",
-        name: "Anadolu İşi Restaurant",
-        logo: "/references/antakya-isi.png",
-        logoAlt: "Antakya İşi",
-        logoScale: 1.35,
-      },
-      {
-        id: "beykoz-molo",
-        name: "Beykoz Molo Rest",
-        logo: "/references/mola-restoran.png",
-        logoAlt: "Mola Restoran",
-        logoScale: 1.3,
-      },
-      {
-        id: "balkabagi-misket",
-        name: "Balkabağı Misket · Misket Hotel",
-        logo: "/references/balkabagi-misket.png",
-        logoAlt: "Balkabağı Misket, Misket Hotel Bodrum",
-        logoScale: 1.35,
-      },
-    ],
+    entries: referenceEntries,
   },
   cta: {
     headline: "Birlikte hayal edelim, birlikte yaşatalım.",
     description:
       "Gıda sektöründe fark yaratmak, yeni bir işletme kurmak veya mevcut işletmenizi profesyonelleştirmek istiyorsanız — birlikte çalışalım.",
   },
-  seo: {
-    description: `${foundedYear}'den beri restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye uçtan uca danışmanlık. MD Danışmanlık.`,
-  },
-};
+  description: `${foundedYear}'den beri restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye uçtan uca danışmanlık. ${brandName}.`,
+} satisfies SiteContent;

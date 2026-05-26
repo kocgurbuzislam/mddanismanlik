@@ -4,9 +4,6 @@ import { Hero } from "@/components/sections/hero";
 import { Process } from "@/components/sections/process";
 import { References } from "@/components/sections/references";
 
-/** Logo dosyaları değişince sayfa güncellensin */
-export const dynamic = "force-dynamic";
-
 export default function Home() {
   return (
     <main>

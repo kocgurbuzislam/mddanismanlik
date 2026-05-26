@@ -4,6 +4,7 @@ import { InstagramIcon } from "@/components/icons/instagram";
 import { BrandLogo } from "@/components/brand-logo";
 import { siteContent } from "@/content/site";
 import { navLinks } from "@/config/navigation";
+import { mailtoHref, mapsSearchHref, telHref } from "@/lib/contact-links";
 
 export function Footer() {
   const { brand, contact } = siteContent;
@@ -24,7 +25,7 @@ export function Footer() {
             <ul className="flex flex-col gap-3 text-sm">
               <li>
                 <a
-                  href={contact.phoneHref}
+                  href={telHref(contact.phone)}
                   className="inline-flex items-center gap-2 font-semibold text-foreground transition-colors hover:text-accent"
                 >
                   <Phone className="h-4 w-4 text-accent" />
@@ -33,7 +34,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={contact.emailHref}
+                  href={mailtoHref(contact.email)}
                   className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent"
                 >
                   <Mail className="h-4 w-4 text-accent" />
@@ -53,7 +54,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={contact.mapHref}
+                  href={mapsSearchHref(contact.address)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-accent"

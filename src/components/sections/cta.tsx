@@ -12,6 +12,13 @@ import { InstagramIcon } from "@/components/icons/instagram";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 
 import { siteContent } from "@/content/site";
+import {
+  mailtoHref,
+  mapsEmbedSrc,
+  mapsSearchHref,
+  telHref,
+  whatsappHref,
+} from "@/lib/contact-links";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -128,7 +135,7 @@ export function Cta() {
                     </span>
 
                     <a
-                      href={contact.phoneHref}
+                      href={telHref(contact.phone)}
                       className="block truncate text-sm font-semibold text-foreground transition-colors hover:text-accent"
                     >
                       {contact.phone}
@@ -136,7 +143,7 @@ export function Cta() {
                   </span>
 
                   <a
-                    href={contact.whatsappHref}
+                    href={whatsappHref(contact.phone)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hidden shrink-0 items-center gap-2 rounded-xl border border-accent/25 px-4 py-2 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-white sm:inline-flex"
@@ -151,7 +158,7 @@ export function Cta() {
                   icon={<Mail className="h-4 w-4" />}
                   label="E-posta"
                   value={contact.email}
-                  href={contact.emailHref}
+                  href={mailtoHref(contact.email)}
                 />
 
                 {/* INSTAGRAM */}
@@ -168,20 +175,20 @@ export function Cta() {
                   icon={<MapPin className="h-4 w-4" />}
                   label="Adres"
                   value={contact.address}
-                  href={contact.mapHref}
+                  href={mapsSearchHref(contact.address)}
                   external
                 />
               </div>
 
               {/* BUTTONS */}
               <div className="mt-8 grid w-full min-w-0 gap-3 sm:grid-cols-2">
-                <Button href={contact.phoneHref} variant="primary">
+                <Button href={telHref(contact.phone)} variant="primary">
                   <Phone className="h-4 w-4" />
                   Hemen Arayın
                 </Button>
 
                 <Button
-                  href={contact.emailHref}
+                  href={mailtoHref(contact.email)}
                   variant="outline"
                   className="border-accent/30 bg-transparent text-accent hover:bg-accent/5 hover:text-accent"
                 >
@@ -198,7 +205,7 @@ export function Cta() {
                 <div className="h-[420px] w-full min-w-0 overflow-hidden lg:h-[520px]">
                   <iframe
                     title={`${brand.name} konum haritası`}
-                    src={contact.mapEmbedSrc}
+                    src={mapsEmbedSrc(contact.address)}
                     className="h-full w-full border-0 max-w-full"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -219,7 +226,7 @@ export function Cta() {
                   </div>
 
                   <a
-                    href={contact.mapHref}
+                    href={mapsSearchHref(contact.address)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-accent/25 px-4 py-2.5 text-sm font-semibold text-accent transition-all hover:bg-accent hover:text-white"

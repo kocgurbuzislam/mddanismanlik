@@ -1,21 +1,7 @@
-import fs from "fs";
-import path from "path";
-
 import { cn } from "@/lib/utils";
 
 const SCALE_LARGE = 1.25;
 const SCALE_EXTRA_LARGE = 1.5;
-
-/** Sunucu bileşenleri: dosya değişince önbelleği kırar */
-export function referenceLogoUrl(logoPath: string): string {
-  try {
-    const file = path.join(process.cwd(), "public", logoPath.replace(/^\//, ""));
-    const { mtimeMs } = fs.statSync(file);
-    return `${logoPath}?v=${Math.floor(mtimeMs)}`;
-  } catch {
-    return logoPath;
-  }
-}
 
 export const referenceLogoCellClass =
   "flex aspect-[5/4] items-center justify-center border-b border-r border-dashed border-border/70 bg-cream p-8 sm:p-10 lg:aspect-[4/3]";

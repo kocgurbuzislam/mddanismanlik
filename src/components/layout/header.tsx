@@ -6,6 +6,7 @@ import { BrandLogo } from "@/components/brand-logo";
 import { useEffect, useState } from "react";
 import { siteContent } from "@/content/site";
 import { navLinks } from "@/config/navigation";
+import { telHref } from "@/lib/contact-links";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -60,7 +61,7 @@ export function Header() {
 
         <div className="relative z-50 flex items-center gap-3">
           <a
-            href={contact.phoneHref}
+            href={telHref(contact.phone)}
             className="hidden items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-cream transition-all hover:bg-accent-hover sm:inline-flex"
           >
             <Phone className="h-4 w-4" strokeWidth={2} />
@@ -95,7 +96,7 @@ export function Header() {
               ))}
             </ul>
             <a
-              href={contact.phoneHref}
+              href={telHref(contact.phone)}
               className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-accent py-3.5 text-sm font-semibold text-cream hover:bg-accent-hover"
             >
               <Phone className="h-4 w-4" />

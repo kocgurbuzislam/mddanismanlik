@@ -9,8 +9,9 @@ import {
 } from "lucide-react";
 import { siteContent } from "@/content/site";
 import { SectionHeading } from "@/components/ui/section-heading";
+import type { ProcessIconId } from "@/types/site";
 
-const processIcons: Record<string, LucideIcon> = {
+const processIcons: Record<ProcessIconId, LucideIcon> = {
   sparkles: Sparkles,
   "pen-tool": PenTool,
   "building-2": Building2,
@@ -19,8 +20,8 @@ const processIcons: Record<string, LucideIcon> = {
   "trending-up": TrendingUp,
 };
 
-function ProcessIcon({ name, className }: { name: string; className?: string }) {
-  const Icon = processIcons[name] ?? Sparkles;
+function ProcessIcon({ name, className }: { name: ProcessIconId; className?: string }) {
+  const Icon = processIcons[name];
   return <Icon className={className} strokeWidth={1.75} />;
 }
 

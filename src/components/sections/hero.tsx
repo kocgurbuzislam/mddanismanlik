@@ -2,54 +2,13 @@ import Image from "next/image";
 import { ArrowDown, Phone } from "lucide-react";
 import { siteContent } from "@/content/site";
 import { Button } from "@/components/ui/button";
-import { cn, yearsSince } from "@/lib/utils";
-
-type Stat = { value: string; label: string };
-
-function HeroStats({
-  stats,
-  compact = false,
-  className,
-}: {
-  stats: Stat[];
-  compact?: boolean;
-  className?: string;
-}) {
-  return (
-    <div className={cn("grid grid-cols-3 gap-4", className)}>
-      {stats.map((stat) => (
-        <div key={stat.label} className={compact ? "text-center" : undefined}>
-          <p
-            className={cn(
-              "font-[family-name:var(--font-instrument)] text-accent",
-              compact ? "text-2xl" : "text-3xl",
-            )}
-          >
-            {stat.value}
-          </p>
-          <p
-            className={cn(
-              "mt-1 text-muted",
-              compact ? "text-[10px]" : "text-xs",
-            )}
-          >
-            {stat.label}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
+import { StatGrid } from "@/components/ui/stat-grid";
+import { telHref } from "@/lib/contact-links";
+import { getBrandExperience } from "@/lib/brand-stats";
 
 export function Hero() {
   const { brand, contact } = siteContent;
-  const experienceYears = yearsSince(brand.foundedYear);
-
-  const stats: Stat[] = [
-    { value: String(brand.foundedYear), label: "Kuruluş yılı" },
-    { value: `${experienceYears}+`, label: "Yıl deneyim" },
-    { value: "100+", label: "Tamamlanan proje" },
-  ];
+  const { stats } = getBrandExperience(brand.foundedYear);
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-cream">
@@ -78,7 +37,7 @@ export function Hero() {
             </p>
 
             <div className="animate-fade-up animate-fade-up-delay-3 mt-10 flex flex-wrap items-center gap-4">
-              <Button href={contact.phoneHref} variant="primary">
+              <Button href={telHref(contact.phone)} variant="primary">
                 <Phone className="h-4 w-4" />
                 Hemen Arayın
               </Button>
@@ -94,11 +53,11 @@ export function Hero() {
               Restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye,
               eğitimden sürdürülebilir büyümeye uçtan uca danışmanlık.
             </p>
-            <HeroStats stats={stats} className="mt-6 border-t border-border pt-6" />
+            <StatGrid stats={stats} className="mt-6 border-t border-border pt-6" />
           </div>
         </div>
 
-        <HeroStats
+        <StatGrid
           stats={stats}
           compact
           className="mt-12 rounded-2xl border border-border bg-cream/90 p-5 shadow-[var(--shadow)] backdrop-blur-md lg:hidden"

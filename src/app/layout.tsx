@@ -17,12 +17,12 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const { brand, seo } = siteContent;
+const { brand, description } = siteContent;
 const siteTitle = `${brand.name} | ${brand.tagline}`;
 
 export const metadata: Metadata = {
   title: siteTitle,
-  description: seo.description,
+  description,
   metadataBase: new URL("https://md-danismanlik.com"),
   icons: {
     icon: "/logo.png",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: siteTitle,
-    description: seo.description,
+    description,
     locale: "tr_TR",
     type: "website",
   },

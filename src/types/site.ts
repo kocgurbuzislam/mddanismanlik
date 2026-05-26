@@ -1,11 +1,18 @@
+export type ProcessIconId =
+  | "sparkles"
+  | "pen-tool"
+  | "building-2"
+  | "graduation-cap"
+  | "settings"
+  | "trending-up";
+
 type ProcessStep = {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: ProcessIconId;
 };
 
-/** Logo grid'de gösterilen referans kaydı */
 export type ReferenceEntry = {
   id: string;
   name: string;
@@ -26,15 +33,10 @@ export type SiteContent = {
   contact: {
     name: string;
     phone: string;
-    phoneHref: string;
-    whatsappHref: string;
     email: string;
-    emailHref: string;
     instagram: string;
     instagramHref: string;
     address: string;
-    mapHref: string;
-    mapEmbedSrc: string;
   };
   about: {
     title: string;
@@ -55,7 +57,5 @@ export type SiteContent = {
     headline: string;
     description: string;
   };
-  seo: {
-    description: string;
-  };
+  description: string;
 };
