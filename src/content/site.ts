@@ -2,15 +2,15 @@ import type { SiteContent } from "@/types/site";
 import { referenceEntries } from "@/content/references";
 
 const phone = "+90 535 259 46 56";
-const email = "info@md-danismanlik.com";
-const address = "İstanbul, Türkiye";
+const email = "mehmetdoganoffical@gmail.com";
+const address = "istanbul beşiktaş şair nedim cadde no 68";
 const foundedYear = 1997;
 const brandName = "MD Danışmanlık";
 
 export const siteContent = {
   brand: {
     name: brandName,
-    tagline: "Gıda & İçecek Sektörü Danışmanlığı",
+    tagline: "Otel, Gıda & İçecek Sektörü Danışmanlığı",
     foundedYear,
     slogan:
       "Her işletme bir yıldız olabilir, biz onun gökyüzünü tasarlarız.",
@@ -20,8 +20,8 @@ export const siteContent = {
     name: "Mehmet Doğan",
     phone,
     email,
-    instagram: "@md_danismanlik",
-    instagramHref: "https://www.instagram.com/md_danismanlik/",
+    instagram: "@mehmetdoganoffical",
+    instagramHref: "https://www.instagram.com/mehmetdoganoffical/",
     address,
   },
   about: {

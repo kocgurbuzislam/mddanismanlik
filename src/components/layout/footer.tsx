@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/instagram";
 import { BrandLogo } from "@/components/brand-logo";
+import { SectionLink } from "@/components/ui/section-link";
 import { siteContent } from "@/content/site";
 import { navLinks } from "@/config/navigation";
 import { mailtoHref, mapsSearchHref, telHref } from "@/lib/contact-links";
@@ -11,7 +11,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-cream">
+    <footer className="relative z-10 border-t border-border bg-cream pb-[max(1.5rem,env(safe-area-inset-bottom))]">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div>
@@ -64,17 +64,20 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+            <nav
+              aria-label="Sayfa bölümleri"
+              className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-x-4 sm:gap-y-2"
+            >
               {navLinks.map((link) => (
-                <Link
+                <SectionLink
                   key={link.href}
                   href={link.href}
-                  className="hover:text-foreground"
+                  className="inline-flex min-h-11 items-center rounded-lg px-2 text-sm font-medium text-muted transition-colors hover:bg-accent-soft/40 hover:text-foreground active:bg-accent-soft/60"
                 >
                   {link.label}
-                </Link>
+                </SectionLink>
               ))}
-            </div>
+            </nav>
           </div>
         </div>
 

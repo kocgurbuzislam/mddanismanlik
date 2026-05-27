@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionLink } from "@/components/ui/section-link";
 import { cn } from "@/lib/utils";
 
 type ButtonProps = {
@@ -31,6 +32,14 @@ export function Button({
       <a href={href} className={classes}>
         {children}
       </a>
+    );
+  }
+
+  if (href.startsWith("#")) {
+    return (
+      <SectionLink href={href} className={classes}>
+        {children}
+      </SectionLink>
     );
   }
 
