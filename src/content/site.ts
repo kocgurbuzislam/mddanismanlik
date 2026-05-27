@@ -2,6 +2,7 @@ import type { SiteContent } from "@/types/site";
 import { referenceEntries } from "@/content/references";
 
 const phone = "+90 535 259 46 56";
+const secondaryPhone = "+90 532 500 56 49";
 const email = "mehmetdoganoffical@gmail.com";
 const address = "istanbul beşiktaş şair nedim cadde no 68";
 const foundedYear = 1997;
@@ -19,6 +20,7 @@ export const siteContent = {
   contact: {
     name: "Mehmet Doğan",
     phone,
+    secondaryPhone,
     email,
     instagram: "@mehmetdoganoffical",
     instagramHref: "https://www.instagram.com/mehmetdoganoffical/",

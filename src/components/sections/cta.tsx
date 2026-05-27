@@ -145,6 +145,26 @@ export function Cta() {
                   }
                 />
 
+                {contact.secondaryPhone && (
+                  <ContactRow
+                    icon={<Phone className="h-4 w-4" />}
+                    label="Alternatif Telefon"
+                    value={contact.secondaryPhone}
+                    href={telHref(contact.secondaryPhone)}
+                    action={
+                      <a
+                        href={whatsappHref(contact.secondaryPhone)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={whatsAppButtonClass}
+                      >
+                        <WhatsAppIcon />
+                        WhatsApp&apos;tan Yaz
+                      </a>
+                    }
+                  />
+                )}
+
                 <ContactRow
                   icon={<Mail className="h-4 w-4" />}
                   label="E-posta"

@@ -39,7 +39,7 @@ export const referenceEntries: ReferenceEntry[] = [
   {
     id: "duble-meze",
     name: "Duble Meze Bar Pera, Celal",
-    logo: "/references/duble-meze.webp",
+    logo: "/references/duble-meze-v4.webp",
     logoAlt: "Duble Meze Pera",
     logoWide: true,
     logoScale: 1.4,

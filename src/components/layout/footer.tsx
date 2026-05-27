@@ -32,6 +32,17 @@ export function Footer() {
                   {contact.phone}
                 </a>
               </li>
+              {contact.secondaryPhone && (
+                <li>
+                  <a
+                    href={telHref(contact.secondaryPhone)}
+                    className="inline-flex items-center gap-2 font-semibold text-foreground transition-colors hover:text-accent"
+                  >
+                    <Phone className="h-4 w-4 text-accent" />
+                    {contact.secondaryPhone}
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   href={mailtoHref(contact.email)}

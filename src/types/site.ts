@@ -33,6 +33,7 @@ export type SiteContent = {
   contact: {
     name: string;
     phone: string;
+    secondaryPhone?: string;
     email: string;
     instagram: string;
     instagramHref: string;

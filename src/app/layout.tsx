@@ -25,8 +25,9 @@ export const metadata: Metadata = {
   description,
   metadataBase: new URL("https://mehmetdoğan.com"),
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/icon.png?v=4",
+    shortcut: "/icon.png?v=4",
+    apple: "/icon.png?v=4",
   },
   openGraph: {
     title: siteTitle,

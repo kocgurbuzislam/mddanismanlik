@@ -42,7 +42,7 @@ export function References() {
                     width={width}
                     height={height}
                     sizes="(max-width: 1024px) 50vw, 25vw"
-                    className={referenceLogoClass(scale, entry.logoWide)}
+                    className={`${referenceLogoClass(scale, entry.logoWide)} ${entry.id === "duble-meze" ? "rounded-full" : ""}`}
                   />
                 </div>
               </li>
