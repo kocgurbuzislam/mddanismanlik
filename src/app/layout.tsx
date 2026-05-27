@@ -23,7 +23,7 @@ const siteTitle = `${brand.name} | ${brand.tagline}`;
 export const metadata: Metadata = {
   title: siteTitle,
   description,
-  metadataBase: new URL("https://md-danismanlik.com"),
+  metadataBase: new URL("https://mehmetdoğan.com"),
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
