@@ -48,7 +48,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="animate-fade-up animate-fade-up-delay-3 hidden rounded-2xl border border-border bg-cream/90 p-6 shadow-[var(--shadow)] backdrop-blur-md lg:block">
+          <div className="animate-fade-up animate-fade-up-delay-3 hidden rounded-2xl border border-border bg-cream p-6 shadow-[var(--shadow)] lg:block">
             <p className="text-sm leading-relaxed text-muted">
               Restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye,
               eğitimden sürdürülebilir büyümeye uçtan uca danışmanlık.
@@ -60,7 +60,7 @@ export function Hero() {
         <StatGrid
           stats={stats}
           compact
-          className="mt-12 rounded-2xl border border-border bg-cream/90 p-5 shadow-[var(--shadow)] backdrop-blur-md lg:hidden"
+          className="mt-12 rounded-2xl border border-border bg-cream p-5 shadow-[var(--shadow)] lg:hidden"
         />
       </div>
     </section>

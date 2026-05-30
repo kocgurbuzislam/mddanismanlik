@@ -22,7 +22,7 @@ export function Button({
     primary:
       "bg-accent text-cream shadow-[0_8px_30px_rgba(184,134,11,0.3)] hover:bg-accent-hover hover:-translate-y-0.5",
     outline:
-      "border border-border bg-cream/80 text-foreground backdrop-blur-sm hover:border-accent/40 hover:bg-cream",
+      "border border-border bg-cream text-foreground hover:border-accent/40 hover:bg-cream",
   };
 
   const classes = cn(base, variants[variant], className);

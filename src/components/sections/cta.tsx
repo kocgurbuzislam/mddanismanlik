@@ -112,7 +112,7 @@ export function Cta() {
           className="mx-auto max-w-3xl"
         />
 
-        <div className="mt-14 w-full min-w-0 overflow-hidden rounded-[2rem] border border-border/80 bg-white/70 shadow-[0_30px_80px_rgba(0,0,0,0.06)] backdrop-blur">
+        <div className="mt-14 w-full min-w-0 overflow-hidden rounded-[2rem] border border-border/80 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.06)]">
           <div className="grid w-full min-w-0 grid-cols-1 overflow-hidden lg:grid-cols-[0.92fr_1.08fr]">
             <div className="w-full min-w-0 border-b border-border/70 p-6 sm:p-10 lg:border-b-0 lg:border-r">
               <div className="inline-flex items-center gap-2 text-accent">

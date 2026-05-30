@@ -20,6 +20,11 @@ const inter = Inter({
 const { brand, description } = siteContent;
 const siteTitle = `${brand.name} | ${brand.tagline}`;
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: siteTitle,
   description,

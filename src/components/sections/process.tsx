@@ -10,6 +10,7 @@ import {
 import { siteContent } from "@/content/site";
 import { SectionHeading } from "@/components/ui/section-heading";
 import type { ProcessIconId } from "@/types/site";
+import styles from "./process.module.css";
 
 const processIcons: Record<ProcessIconId, LucideIcon> = {
   sparkles: Sparkles,
@@ -20,13 +21,41 @@ const processIcons: Record<ProcessIconId, LucideIcon> = {
   "trending-up": TrendingUp,
 };
 
-function ProcessIcon({ name, className }: { name: ProcessIconId; className?: string }) {
+function ProcessIcon({ name }: { name: ProcessIconId }) {
   const Icon = processIcons[name];
-  return <Icon className={className} strokeWidth={1.75} />;
+  return <Icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={1.75} />;
+}
+
+type Step = (typeof siteContent.process.steps)[number];
+
+function ProcessCard({ step, index }: { step: Step; index: number }) {
+  return (
+    <article className={styles.card}>
+      <div className={styles.cardHead}>
+        <span className={styles.iconBox}>
+          <ProcessIcon name={step.icon} />
+        </span>
+        <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
+      </div>
+      <h3 className={styles.title}>{step.title}</h3>
+      <p className={styles.text}>{step.description}</p>
+    </article>
+  );
+}
+
+function chunk<T>(items: T[], size: number): T[][] {
+  const rows: T[][] = [];
+  for (let i = 0; i < items.length; i += size) {
+    rows.push(items.slice(i, i + size));
+  }
+  return rows;
 }
 
 export function Process() {
   const { process } = siteContent;
+  const steps = process.steps;
+  const rowsOf2 = chunk(steps, 2);
+  const rowsOf3 = chunk(steps, 3);
 
   return (
     <section id="surec" className="scroll-mt-24 bg-background py-24 lg:py-32">
@@ -39,26 +68,43 @@ export function Process() {
           className="mx-auto"
         />
 
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {process.steps.map((step, index) => (
-            <article
-              key={step.id}
-              className="group relative flex flex-col rounded-2xl border border-border bg-cream p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-[var(--shadow)]"
-            >
-              <div className="mb-6 flex items-start justify-between">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 text-accent transition-colors group-hover:bg-accent group-hover:text-cream">
-                  <ProcessIcon name={step.icon} className="h-5 w-5" />
-                </span>
-                <span className="font-[family-name:var(--font-instrument)] text-4xl leading-none text-accent-soft transition-colors group-hover:text-accent/50">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </div>
-              <h3 className="text-lg font-semibold text-foreground">{step.title}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                {step.description}
-              </p>
-            </article>
-          ))}
+        <div className={styles.wrapper}>
+          {/* 2 sütun — telefon, tablet, masaüstü sitesi modu */}
+          <table className={`${styles.table} ${styles.tableNarrow}`} role="presentation">
+            <tbody>
+              {rowsOf2.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  {row.map((step, cellIndex) => {
+                    const index = rowIndex * 2 + cellIndex;
+                    return (
+                      <td key={step.id} className={styles.cell}>
+                        <ProcessCard step={step} index={index} />
+                      </td>
+                    );
+                  })}
+                  {row.length === 1 && <td className={styles.cell} aria-hidden />}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          {/* 3 sütun — geniş masaüstü */}
+          <table className={styles.tableWide} role="presentation">
+            <tbody>
+              {rowsOf3.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  {row.map((step, cellIndex) => {
+                    const index = rowIndex * 3 + cellIndex;
+                    return (
+                      <td key={step.id} className={styles.cellWide}>
+                        <ProcessCard step={step} index={index} />
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

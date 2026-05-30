@@ -1,0 +1,167 @@
+.wrapper {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.cell {
+  width: 50%;
+  padding: 0 0.5rem 1.25rem;
+  vertical-align: top;
+}
+
+.cell:first-child {
+  padding-left: 0;
+}
+
+.cell:last-child {
+  padding-right: 0;
+}
+
+/* Telefon: kartlar alt alta tek sütun */
+@media (max-width: 767px) {
+  .tableNarrow {
+    display: block;
+  }
+
+  .tableNarrow tbody,
+  .tableNarrow tr {
+    display: block;
+  }
+
+  .tableNarrow .cell {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0 0 1.25rem;
+  }
+
+  .tableNarrow .card {
+    height: auto;
+  }
+}
+
+/* Tablet: 2 sütun, aynı satırdaki kartlar eşit yükseklik */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .tableNarrow .cell {
+    height: 1px;
+  }
+
+  .tableNarrow .card {
+    height: 100%;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--cream);
+}
+
+.cardHead {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.iconBox {
+  float: left;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  background: rgba(184, 134, 11, 0.15);
+  color: var(--accent);
+  box-sizing: border-box;
+}
+
+.number {
+  float: right;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 2.25rem;
+  line-height: 1.25;
+  color: var(--accent-soft);
+}
+
+.title {
+  margin: 0;
+  clear: both;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.text {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--muted);
+}
+
+/* Geniş ekran: 3 sütunlu tablo */
+.tableWide {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .tableNarrow {
+    display: none;
+  }
+
+  .tableWide {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+  }
+
+  .cellWide {
+    width: 33.333%;
+    padding: 0 0.5rem 1.25rem;
+    vertical-align: top;
+  }
+
+  .cellWide:first-child {
+    padding-left: 0;
+  }
+
+  .cellWide:last-child {
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .iconBox {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .number {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: 1.75rem;
+  }
+}

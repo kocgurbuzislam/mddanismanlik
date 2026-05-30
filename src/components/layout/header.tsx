@@ -46,8 +46,8 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
-          ? "border-b border-border/60 bg-cream/90 py-3 shadow-sm backdrop-blur-xl"
-          : "bg-cream/60 py-5 backdrop-blur-md",
+          ? "border-b border-border/60 bg-cream py-3 shadow-sm"
+          : "bg-cream/95 py-5",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -93,7 +93,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 top-0 z-40 bg-accent-soft/40 backdrop-blur-sm md:hidden">
+        <div className="fixed inset-0 top-0 z-40 bg-accent-soft/70 md:hidden">
           <nav className="absolute inset-x-4 top-20 rounded-2xl border border-border bg-cream p-6 shadow-2xl">
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
