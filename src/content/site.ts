@@ -1,4 +1,5 @@
 import type { SiteContent } from "@/types/site";
+import { projectEntries } from "@/content/projects";
 import { referenceEntries } from "@/content/references";
 
 const phone = "+90 535 259 46 56";
@@ -88,6 +89,12 @@ export const siteContent = {
     title: "Referanslarımız",
     subtitle: `${foundedYear}'den bu yana Türkiye ve yurtdışında önde gelen otel, restoran ve işletmelerde edinilen deneyim.`,
     entries: referenceEntries,
+  },
+  projects: {
+    title: "Tamamladığımız Projeler",
+    subtitle:
+      "Konseptten işletmeye, her projede mekânın ruhunu ve sürdürülebilir başarıyı bir arada tasarlıyoruz.",
+    entries: projectEntries,
   },
   cta: {
     headline: "Birlikte hayal edelim, birlikte yaşatalım.",

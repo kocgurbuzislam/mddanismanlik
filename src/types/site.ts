@@ -22,6 +22,22 @@ export type ReferenceEntry = {
   logoWide?: boolean;
 };
 
+export type ProjectImage = {
+  src: string;
+  alt?: string;
+  /** photo: 4/3 kapak stili. document: tam genişlik, görsel oranına uygun kutu. */
+  galleryLayout?: "photo" | "document";
+};
+
+export type ProjectEntry = {
+  id: string;
+  title: string;
+  description: string;
+  cover: string;
+  coverAlt?: string;
+  images: ProjectImage[];
+};
+
 export type SiteContent = {
   brand: {
     name: string;
@@ -53,6 +69,11 @@ export type SiteContent = {
     title: string;
     subtitle: string;
     entries: ReferenceEntry[];
+  };
+  projects: {
+    title: string;
+    subtitle: string;
+    entries: ProjectEntry[];
   };
   cta: {
     headline: string;
