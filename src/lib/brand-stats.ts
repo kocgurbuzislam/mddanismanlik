@@ -1,16 +1,23 @@
 import { yearsSince } from "@/lib/utils";
 
-export type BrandStat = { value: string; label: string };
+export type BrandStats = {
+  foundedYear: number;
+  years: number;
+  completedProjects: number;
+};
 
-export function getBrandExperience(foundedYear: number) {
+export function getBrandStats(
+  foundedYear: number,
+  options?: {
+    completedProjectsMin?: number;
+    referenceCount?: number;
+  },
+): BrandStats {
   const years = yearsSince(foundedYear);
+  const completedProjects = Math.max(
+    options?.completedProjectsMin ?? 100,
+    options?.referenceCount ?? 0,
+  );
 
-  return {
-    years,
-    stats: [
-      { value: String(foundedYear), label: "Kuruluş yılı" },
-      { value: `${years}+`, label: "Yıl deneyim" },
-      { value: "100+", label: "Tamamlanan proje" },
-    ] satisfies BrandStat[],
-  };
+  return { foundedYear, years, completedProjects };
 }

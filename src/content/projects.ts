@@ -2,6 +2,7 @@ import type { ProjectEntry } from "@/types/site";
 
 const zihniPubCover = "/projects/zihni-pub/pub-cover.webp";
 const antakyaIsiCover = "/projects/antakya-isi/cover.webp";
+const dubleMezeCover = "/projects/duble-meze-bar/cover.webp";
 
 export const projectEntries: ProjectEntry[] = [
   {
@@ -50,6 +51,28 @@ export const projectEntries: ProjectEntry[] = [
         src: "/projects/antakya-isi/press-gazete.webp",
         alt: "Antakya İşi basın yazısı",
         galleryLayout: "document",
+      },
+    ],
+  },
+  {
+    id: "duble-meze-bar",
+    title: "Duble Meze Bar",
+    description:
+      "Duble Meze Bar için meze kültürünü ön plana alan konsept, menü yapısı ve işletme danışmanlığı sürecinde mekânın samimi atmosferi güçlendirildi. Geleneksel sofra deneyimi ile çağdaş bar kültürü bir arada kurgulandı; servis akışı ve ürün sunumu misafir memnuniyetini artıracak şekilde planlandı. Ekip koordinasyonu ve operasyonel standartlarla sürdürülebilir bir işletme modeli hedeflendi.",
+    cover: dubleMezeCover,
+    coverAlt: "Duble Meze Bar teras ve sofra",
+    images: [
+      {
+        src: dubleMezeCover,
+        alt: "Duble Meze Bar teras ve sofra",
+      },
+      {
+        src: "/projects/duble-meze-bar/dining.webp",
+        alt: "Duble Meze Bar meze sofrası",
+      },
+      {
+        src: "/projects/duble-meze-bar/team.webp",
+        alt: "Duble Meze Bar ekip",
       },
     ],
   },

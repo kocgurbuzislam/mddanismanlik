@@ -117,7 +117,7 @@ export function Projects() {
   const closeModal = useCallback(() => setActiveProject(null), []);
 
   return (
-    <section id="projeler" className="scroll-mt-24 bg-background pt-10 pb-24 sm:pt-12 lg:pt-16 lg:pb-32">
+    <section id="projeler" className="scroll-mt-24 bg-background pt-10 pb-14 sm:pt-12 sm:pb-16 lg:pt-16 lg:pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           label="Projeler"

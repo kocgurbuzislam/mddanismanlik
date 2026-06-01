@@ -2,14 +2,11 @@ import Image from "next/image";
 import { siteContent } from "@/content/site";
 import { ExperienceBadge } from "@/components/ui/experience-badge";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { getBrandExperience } from "@/lib/brand-stats";
-
 export function About() {
   const { about, brand } = siteContent;
-  const { years } = getBrandExperience(brand.foundedYear);
 
   return (
-    <section id="hakkimizda" className="scroll-mt-24 bg-cream py-24 lg:py-32">
+    <section id="hakkimizda" className="scroll-mt-24 bg-cream pt-24 pb-14 lg:pt-32 lg:pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="relative">
@@ -23,7 +20,7 @@ export function About() {
               />
             </div>
             <div className="absolute -bottom-6 -right-4 sm:-right-8">
-              <ExperienceBadge years={years} />
+              <ExperienceBadge foundedYear={brand.foundedYear} />
             </div>
           </div>
 

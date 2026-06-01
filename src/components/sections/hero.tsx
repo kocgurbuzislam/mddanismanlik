@@ -4,11 +4,10 @@ import { siteContent } from "@/content/site";
 import { Button } from "@/components/ui/button";
 import { StatGrid } from "@/components/ui/stat-grid";
 import { telHref } from "@/lib/contact-links";
-import { getBrandExperience } from "@/lib/brand-stats";
+import { referenceEntries } from "@/content/references";
 
 export function Hero() {
   const { brand, contact } = siteContent;
-  const { stats } = getBrandExperience(brand.foundedYear);
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-cream">
@@ -53,12 +52,19 @@ export function Hero() {
               Restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye,
               eğitimden sürdürülebilir büyümeye uçtan uca danışmanlık.
             </p>
-            <StatGrid stats={stats} className="mt-6 border-t border-border pt-6" />
+            <StatGrid
+              foundedYear={brand.foundedYear}
+              completedProjectsMin={brand.completedProjectsMin}
+              referenceCount={referenceEntries.length}
+              className="mt-6 border-t border-border pt-6"
+            />
           </div>
         </div>
 
         <StatGrid
-          stats={stats}
+          foundedYear={brand.foundedYear}
+          completedProjectsMin={brand.completedProjectsMin}
+          referenceCount={referenceEntries.length}
           compact
           className="mt-12 rounded-2xl border border-border bg-cream p-5 shadow-[var(--shadow)] lg:hidden"
         />

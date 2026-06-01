@@ -101,7 +101,7 @@ export function Cta() {
   const { cta, contact, brand } = siteContent;
 
   return (
-    <section id="iletisim" className="scroll-mt-24 bg-cream py-20 lg:py-24">
+    <section id="iletisim" className="scroll-mt-24 bg-cream pt-10 pb-20 sm:pt-12 lg:pt-14 lg:pb-24">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeading
           label="İletişim"

@@ -58,7 +58,7 @@ export function Process() {
   const rowsOf3 = chunk(steps, 3);
 
   return (
-    <section id="surec" className="scroll-mt-24 bg-background pt-24 pb-14 lg:pt-32 lg:pb-16">
+    <section id="surec" className="scroll-mt-24 bg-background pt-10 pb-14 sm:pt-12 lg:pt-16 lg:pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           label="Metodolojimiz"

@@ -12,7 +12,7 @@ export function References() {
   const { references } = siteContent;
 
   return (
-    <section id="referanslar" className="scroll-mt-24 bg-cream py-24 lg:py-32">
+    <section id="referanslar" className="scroll-mt-24 bg-cream pt-10 pb-14 sm:pt-12 lg:pt-16 lg:pb-16">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <SectionHeading
           label="Referanslar"

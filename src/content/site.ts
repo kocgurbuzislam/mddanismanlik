@@ -14,6 +14,7 @@ export const siteContent = {
     name: brandName,
     tagline: "Otel, Gıda & İçecek Sektörü Danışmanlığı",
     foundedYear,
+    completedProjectsMin: 100,
     slogan:
       "Her işletme bir yıldız olabilir, biz onun gökyüzünü tasarlarız.",
     logo: "/logo.png",

@@ -43,6 +43,8 @@ export type SiteContent = {
     name: string;
     tagline: string;
     foundedYear: number;
+    /** Gösterilen minimum tamamlanan proje sayısı (referans sayısından büyükse o kullanılır) */
+    completedProjectsMin: number;
     slogan: string;
     logo: string;
   };
