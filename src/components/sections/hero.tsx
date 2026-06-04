@@ -29,10 +29,11 @@ export function Hero() {
           <div>
             <h1 className="animate-fade-up animate-fade-up-delay-1 font-[family-name:var(--font-instrument)] text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.02] font-normal tracking-tight text-foreground">
               {brand.name}
+              <span className="sr-only"> — {brand.tagline}</span>
             </h1>
 
             <p className="animate-fade-up animate-fade-up-delay-2 mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-              {brand.slogan}
+              {brand.tagline}. {brand.slogan}
             </p>
 
             <div className="animate-fade-up animate-fade-up-delay-3 mt-10 flex flex-wrap items-center gap-4">

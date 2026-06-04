@@ -1,4 +1,8 @@
+import type { Metadata } from "next";
 import { About } from "@/components/sections/about";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({ path: "/" });
 import { Cta } from "@/components/sections/cta";
 import { Hero } from "@/components/sections/hero";
 import { Process } from "@/components/sections/process";
@@ -7,7 +11,7 @@ import { References } from "@/components/sections/references";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Hero />
       <About />
       <Process />

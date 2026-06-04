@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
-import { siteContent } from "@/content/site";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { buildJsonLd, createRootMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -17,42 +17,12 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const { brand, description } = siteContent;
-const siteTitle = `${brand.name} | ${brand.tagline}`;
-
 export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
 
-export const metadata: Metadata = {
-  title: siteTitle,
-  description,
-  metadataBase: new URL("https://mehmetdoğan.com"),
-  icons: {
-    icon: "/icon.png?v=4",
-    shortcut: "/icon.png?v=4",
-    apple: "/icon.png?v=4",
-  },
-  openGraph: {
-    title: siteTitle,
-    description,
-    locale: "tr_TR",
-    type: "website",
-    images: [
-      {
-        url: "/logo.png",
-        alt: brand.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteTitle,
-    description,
-    images: ["/logo.png"],
-  },
-};
+export const metadata = createRootMetadata();
 
 export default function RootLayout({
   children,
@@ -65,6 +35,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} h-full scroll-smooth antialiased overflow-x-hidden`}
     >
       <body className="min-h-full bg-background text-foreground overflow-x-hidden">
+        <JsonLd data={buildJsonLd()} />
         <Header />
         {children}
         <Footer />

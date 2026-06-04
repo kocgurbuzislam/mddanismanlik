@@ -83,4 +83,13 @@ export type SiteContent = {
     description: string;
   };
   description: string;
+  seo: {
+    keywords: string[];
+    ogImageAlt: string;
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    serviceTopics: string[];
+    services: string[];
+  };
 };
