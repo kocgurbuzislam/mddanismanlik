@@ -94,8 +94,14 @@ function ProjectModal({
                         src={image.src}
                         alt={image.alt ?? project.title}
                         fill
+                        unoptimized
                         sizes="(max-width: 640px) 100vw, 280px"
-                        className="object-cover"
+                        className={
+                          image.src === project.cover &&
+                          project.coverFit === "contain"
+                            ? "object-contain object-center"
+                            : "object-cover object-center"
+                        }
                       />
                     </div>
                   )}
@@ -137,11 +143,17 @@ export function Projects() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-background-alt">
                   <Image
+                    key={project.cover}
                     src={project.cover}
                     alt={project.coverAlt ?? project.title}
                     fill
+                    unoptimized
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className={
+                      project.coverFit === "contain"
+                        ? "object-contain object-center"
+                        : "object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                    }
                   />
                 </div>
                 <div className="px-5 py-4 sm:px-6 sm:py-5">

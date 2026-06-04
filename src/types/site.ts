@@ -35,6 +35,7 @@ export type ProjectEntry = {
   description: string;
   cover: string;
   coverAlt?: string;
+  coverFit?: "cover" | "contain";
   images: ProjectImage[];
 };
 

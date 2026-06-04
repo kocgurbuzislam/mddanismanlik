@@ -3,6 +3,9 @@ import type { ProjectEntry } from "@/types/site";
 const zihniPubCover = "/projects/zihni-pub/pub-cover.webp";
 const antakyaIsiCover = "/projects/antakya-isi/cover.webp";
 const dubleMezeCover = "/projects/duble-meze-bar/cover.webp";
+const nusrEtCover = "/projects/nusr-et/cover-card.webp";
+const boroviHotelCover = "/projects/borovi-hotel/cover.webp";
+const theCrownCover = "/projects/the-crown/cover.webp";
 
 export const projectEntries: ProjectEntry[] = [
   {
@@ -73,6 +76,80 @@ export const projectEntries: ProjectEntry[] = [
       {
         src: "/projects/duble-meze-bar/team.webp",
         alt: "Duble Meze Bar ekip",
+      },
+    ],
+  },
+  {
+    id: "nusr-et",
+    title: "Nusr-Et",
+    description:
+      "Nusr-Et Steakhouse için premium steakhouse konsepti, servis standartları ve operasyon danışmanlığı sürecinde markanın ikonik misafir deneyimi desteklendi. Mekân kimliği, ekip yapısı ve sunum kalitesi uluslararası ölçekte tutarlılık hedefiyle kurgulandı. İşletme modeli ve süreç yönetimiyle sürdürülebilir başarıya odaklanıldı.",
+    cover: nusrEtCover,
+    coverAlt: "Nusr-Et Steakhouse",
+    images: [
+      {
+        src: nusrEtCover,
+        alt: "Nusr-Et Steakhouse",
+      },
+      {
+        src: "/projects/nusr-et/team.webp",
+        alt: "Nusr-Et ekip",
+      },
+      {
+        src: "/projects/nusr-et/staff.webp",
+        alt: "Nusr-Et karşılama ekibi",
+      },
+    ],
+  },
+  {
+    id: "borovi-hotel",
+    title: "Borovi Hotel",
+    description:
+      "Borovi Forest Resort & Spa için açılış süreci, konaklama konsepti ve işletme danışmanlığı kapsamında markanın doğa ile iç içe konumlandırması güçlendirildi. Grand opening organizasyonu, operasyonel yapı ve misafir deneyimi; butik resort kimliğini yansıtacak şekilde planlandı. Sürdürülebilir işletme modeli ve ekip standartlarıyla uzun vadeli başarı hedeflendi.",
+    cover: boroviHotelCover,
+    coverAlt: "Borovi Forest Resort & Spa",
+    images: [
+      {
+        src: boroviHotelCover,
+        alt: "Borovi Hotel ve göl manzarası",
+      },
+      {
+        src: "/projects/borovi-hotel/opening.webp",
+        alt: "Borovi Grand Opening",
+      },
+      {
+        src: "/projects/borovi-hotel/lobby.webp",
+        alt: "Borovi Hotel lobi",
+      },
+      {
+        src: "/projects/borovi-hotel/resort.webp",
+        alt: "Borovi Forest Resort",
+      },
+    ],
+  },
+  {
+    id: "the-crown",
+    title: "The Crown",
+    description:
+      "The Crown Istanbul fine dining için konsept, menü yapısı ve işletme danışmanlığı sürecinde mekânın seçkin atmosferi güçlendirildi. İstanbul manzaralı bar ve salon alanları, kristal detaylar ve fine dining kimliği bir arada kurgulandı. Servis standartları ve operasyonel yapıyla sürdürülebilir bir restoran deneyimi hedeflendi.",
+    cover: theCrownCover,
+    coverAlt: "The Crown Istanbul fine dining",
+    images: [
+      {
+        src: theCrownCover,
+        alt: "The Crown bar ve İstanbul manzarası",
+      },
+      {
+        src: "/projects/the-crown/lounge.webp",
+        alt: "The Crown kristal salon",
+      },
+      {
+        src: "/projects/the-crown/menu.webp",
+        alt: "The Crown menü",
+      },
+      {
+        src: "/projects/the-crown/dining.webp",
+        alt: "The Crown restoran salonu",
       },
     ],
   },

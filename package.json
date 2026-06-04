@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "optimize:references": "node scripts/optimize-references.mjs"
+    "optimize:references": "node scripts/optimize-references.mjs",
+    "optimize:nusr-et-cover": "node scripts/optimize-nusr-et-cover.mjs",
+    "optimize:the-crown-cover": "node scripts/optimize-the-crown-cover.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
