@@ -6,6 +6,7 @@ const dubleMezeCover = "/projects/duble-meze-bar/cover.webp";
 const nusrEtCover = "/projects/nusr-et/cover-card.webp";
 const boroviHotelCover = "/projects/borovi-hotel/cover.webp";
 const theCrownCover = "/projects/the-crown/cover.webp";
+const qoalaBeachCover = "/projects/qoala-beach/cover.webp";
 
 export const projectEntries: ProjectEntry[] = [
   {
@@ -150,6 +151,24 @@ export const projectEntries: ProjectEntry[] = [
       {
         src: "/projects/the-crown/dining.webp",
         alt: "The Crown restoran salonu",
+      },
+    ],
+  },
+  {
+    id: "qoala-beach",
+    title: "Qoala Beach",
+    description:
+      "Qoala Beach için beach club konsepti, F&B operasyonu ve misafir deneyimi danışmanlığı sürecinde mekânın yaz sezonu kimliği güçlendirildi. Havuz, şezlong ve bar alanları; premium plaj kulübü atmosferini yansıtacak şekilde kurgulandı. Menü yapısı, servis akışı ve ekip standartlarıyla sürdürülebilir bir işletme modeli hedeflendi.",
+    cover: qoalaBeachCover,
+    coverAlt: "Qoala Beach Club",
+    images: [
+      {
+        src: qoalaBeachCover,
+        alt: "Qoala Beach şarap ve plaj atmosferi",
+      },
+      {
+        src: "/projects/qoala-beach/wine.webp",
+        alt: "Qoala Beach bar ve şarap sunumu",
       },
     ],
   },

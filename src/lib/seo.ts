@@ -4,7 +4,7 @@ import { siteContent } from "@/content/site";
 
 const { brand, contact, description, seo } = siteContent;
 
-export const defaultTitle = `${brand.name} | ${brand.tagline}`;
+const defaultTitle = `${brand.name} | ${brand.tagline}`;
 
 export function createRootMetadata(): Metadata {
   const siteUrl = getSiteUrl();
@@ -61,9 +61,12 @@ export function createRootMetadata(): Metadata {
       images: [brand.logo],
     },
     icons: {
-      icon: "/icon.png?v=4",
-      shortcut: "/icon.png?v=4",
-      apple: "/icon.png?v=4",
+      icon: [
+        { url: "/favicon.ico", sizes: "48x48" },
+        { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      ],
+      shortcut: "/favicon.ico",
+      apple: "/icon.png",
     },
     other: {
       "geo.region": "TR-34",

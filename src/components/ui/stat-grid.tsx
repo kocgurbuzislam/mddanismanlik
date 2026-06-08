@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { getBrandStats } from "@/lib/brand-stats";
 import { cn } from "@/lib/utils";
 
@@ -13,15 +13,11 @@ type StatGridProps = {
 };
 
 function useCountUp(target: number, active: boolean, duration = 1200) {
-  const [value, setValue] = useState(target);
+  const [value, setValue] = useState(0);
 
   useEffect(() => {
-    if (!active) {
-      setValue(target);
-      return;
-    }
+    if (!active) return;
 
-    setValue(0);
     let frame = 0;
     const start = performance.now();
 
@@ -36,7 +32,7 @@ function useCountUp(target: number, active: boolean, duration = 1200) {
     return () => cancelAnimationFrame(frame);
   }, [target, active, duration]);
 
-  return value;
+  return active ? value : target;
 }
 
 export function StatGrid({
@@ -48,13 +44,10 @@ export function StatGrid({
 }: StatGridProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [animate, setAnimate] = useState(false);
-  const [stats, setStats] = useState(() =>
-    getBrandStats(foundedYear, { completedProjectsMin, referenceCount }),
+  const stats = useMemo(
+    () => getBrandStats(foundedYear, { completedProjectsMin, referenceCount }),
+    [foundedYear, completedProjectsMin, referenceCount],
   );
-
-  useEffect(() => {
-    setStats(getBrandStats(foundedYear, { completedProjectsMin, referenceCount }));
-  }, [foundedYear, completedProjectsMin, referenceCount]);
 
   useEffect(() => {
     const node = rootRef.current;

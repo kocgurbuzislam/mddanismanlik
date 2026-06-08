@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { getBrandStats } from "@/lib/brand-stats";
 
 type ExperienceBadgeProps = {
@@ -12,11 +9,7 @@ export function ExperienceBadge({
   foundedYear,
   label = "yıllık sektör deneyimi",
 }: ExperienceBadgeProps) {
-  const [years, setYears] = useState(() => getBrandStats(foundedYear).years);
-
-  useEffect(() => {
-    setYears(getBrandStats(foundedYear).years);
-  }, [foundedYear]);
+  const years = getBrandStats(foundedYear).years;
 
   return (
     <div className="rounded-2xl border border-border bg-background px-6 py-5 shadow-lg">
