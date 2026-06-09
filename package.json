@@ -10,6 +10,7 @@
     "optimize:references": "node scripts/optimize-references.mjs",
     "optimize:nusr-et-cover": "node scripts/optimize-nusr-et-cover.mjs",
     "optimize:the-crown-cover": "node scripts/optimize-the-crown-cover.mjs",
+    "optimize:ritz-carlton-bice": "node scripts/optimize-ritz-carlton-bice.mjs",
     "optimize:icons": "node scripts/optimize-icons.mjs"
   },
   "dependencies": {

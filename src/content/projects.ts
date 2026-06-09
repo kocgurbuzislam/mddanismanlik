@@ -7,6 +7,7 @@ const nusrEtCover = "/projects/nusr-et/cover-card.webp";
 const boroviHotelCover = "/projects/borovi-hotel/cover.webp";
 const theCrownCover = "/projects/the-crown/cover.webp";
 const qoalaBeachCover = "/projects/qoala-beach/cover.webp";
+const ritzCarltonBiceCover = "/projects/ritz-carlton-bice/cover.webp";
 
 export const projectEntries: ProjectEntry[] = [
   {
@@ -151,6 +152,32 @@ export const projectEntries: ProjectEntry[] = [
       {
         src: "/projects/the-crown/dining.webp",
         alt: "The Crown restoran salonu",
+      },
+    ],
+  },
+  {
+    id: "ritz-carlton-bice",
+    title: "Bice Restaurant",
+    description:
+      "The Ritz-Carlton, Istanbul bünyesindeki Bice Restaurant için İtalyan mutfağı konsepti, menü yapısı ve fine dining operasyon danışmanlığı yürütüldü. Boğaz manzaralı otel atmosferinde klasik İtalyan lezzetleri; servis standartları, ekip yapısı ve misafir deneyimiyle bir araya getirildi. Sürdürülebilir işletme modeli ve premium F&B operasyonu hedeflendi.",
+    cover: ritzCarltonBiceCover,
+    coverAlt: "The Ritz-Carlton Istanbul ve Bice Restaurant",
+    images: [
+      {
+        src: ritzCarltonBiceCover,
+        alt: "The Ritz-Carlton Istanbul Boğaz manzarası",
+      },
+      {
+        src: "/projects/ritz-carlton-bice/interior.webp",
+        alt: "Bice Restaurant salonu",
+      },
+      {
+        src: "/projects/ritz-carlton-bice/pizza.webp",
+        alt: "Bice Restaurant İtalyan pizza sunumu",
+      },
+      {
+        src: "/projects/ritz-carlton-bice/service.webp",
+        alt: "Bice Restaurant servis ve deniz ürünleri",
       },
     ],
   },
