@@ -1,11 +1,11 @@
 /**
  * Favicon ve uygulama ikonları — npm run optimize:icons
- * Kaynak: public/logo-icon.png (şeffaf PNG, trim sonrası)
+ * Kaynak: assets/logo-icon.png (deploy edilmez)
  */
 import fs from "fs";
 import sharp from "sharp";
 
-const SOURCE = "public/logo-icon.png";
+const SOURCE = "assets/logo-icon.png";
 
 async function squareIcon(size, out) {
   const trimmed = await sharp(SOURCE).trim({ threshold: 10 }).toBuffer();
