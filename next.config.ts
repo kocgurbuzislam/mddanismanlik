@@ -8,11 +8,14 @@ const polyfillAlias = {
 } as const;
 
 const nextConfig: NextConfig = {
+  // Telefondan yerel ağ IP'si ile test için (dev modunda JS/hydration çalışsın)
+  allowedDevOrigins: ["192.168.1.35", "172.20.208.1"],
   experimental: {
     inlineCss: true,
     cssChunking: false,
   },
   images: {
+    qualities: [50, 75],
     remotePatterns: [
       {
         protocol: "https",

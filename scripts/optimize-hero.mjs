@@ -20,8 +20,8 @@ if (!response.ok) {
 const buffer = Buffer.from(await response.arrayBuffer());
 
 await sharp(buffer)
-  .resize(1024, null, { withoutEnlargement: true })
-  .webp({ quality: 50, effort: 4 })
+  .resize(828, null, { withoutEnlargement: true })
+  .webp({ quality: 38, effort: 6, smartSubsample: true })
   .toFile(OUT);
 
 const meta = await sharp(OUT).metadata();

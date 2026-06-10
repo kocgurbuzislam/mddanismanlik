@@ -36,9 +36,9 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${playfair.variable} ${inter.variable} h-full scroll-smooth antialiased overflow-x-hidden`}
+      className={`${playfair.variable} ${inter.variable} h-full scroll-smooth antialiased overflow-x-clip`}
     >
-      <body className="min-h-full bg-background text-foreground overflow-x-hidden">
+      <body className="min-h-full bg-background text-foreground">
         <JsonLd data={buildJsonLd()} />
         <Header />
         {children}

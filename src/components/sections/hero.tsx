@@ -17,8 +17,9 @@ export function Hero() {
           alt="Şık restoran iç mekânı"
           fill
           priority
+          quality={50}
           className="object-cover object-center opacity-90"
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/80 to-cream/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/70 to-transparent" />
