@@ -19,12 +19,13 @@ export function BrandLogo({ className, size = "header" }: BrandLogoProps) {
       height={tall ? 300 : 240}
       unoptimized
       priority={size === "header"}
+      fetchPriority={size === "header" ? "high" : "auto"}
       style={{ width: "auto" }}
       className={cn(
         "w-auto object-contain pointer-events-none",
         tall
           ? "h-[110px] sm:h-[130px] -ml-[28px] sm:-ml-[34px]"
-          : "relative top-1.5 sm:top-2 lg:top-3 -my-[26px] sm:-my-[32px] lg:-my-[43px] h-[100px] sm:h-[120px] lg:h-[150px]",
+          : "relative top-1.5 sm:top-2 lg:top-3 -my-[26px] sm:-my-[32px] lg:-my-[43px] h-[100px] sm:h-[120px] lg:h-[150px] -ml-[26px] sm:-ml-[37px] lg:-ml-[54px]",
         className,
       )}
     />

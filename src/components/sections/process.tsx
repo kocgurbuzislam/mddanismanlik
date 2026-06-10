@@ -69,7 +69,6 @@ export function Process() {
         />
 
         <div className={styles.wrapper}>
-          {/* 2 sütun — telefon, tablet, masaüstü sitesi modu */}
           <table className={`${styles.table} ${styles.tableNarrow}`} role="presentation">
             <tbody>
               {rowsOf2.map((row, rowIndex) => (
@@ -88,7 +87,6 @@ export function Process() {
             </tbody>
           </table>
 
-          {/* 3 sütun — geniş masaüstü */}
           <table className={styles.tableWide} role="presentation">
             <tbody>
               {rowsOf3.map((row, rowIndex) => (

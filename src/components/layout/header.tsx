@@ -44,7 +44,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        "fixed inset-x-0 top-0 z-50 overflow-visible transition-all duration-500",
         scrolled
           ? "border-b border-border/60 bg-cream py-3 shadow-sm"
           : "bg-cream/95 py-5",
@@ -54,7 +54,7 @@ export function Header() {
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="group relative z-10 flex h-12 w-[150px] items-center sm:h-14 sm:w-[180px] lg:h-16 lg:w-[225px]"
+          className="group relative z-10 flex h-12 w-[150px] items-center overflow-visible sm:h-14 sm:w-[180px] lg:h-16 lg:w-[225px]"
         >
           <BrandLogo className="transition-opacity group-hover:opacity-90" />
           <span className="sr-only">{brand.name}</span>

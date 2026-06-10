@@ -8,13 +8,17 @@ import "./globals.css";
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
+  display: "swap",
+  preload: true,
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
 });
 
 export const viewport = {
@@ -34,6 +38,9 @@ export default function RootLayout({
       lang="tr"
       className={`${playfair.variable} ${inter.variable} h-full scroll-smooth antialiased overflow-x-hidden`}
     >
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
+      </head>
       <body className="min-h-full bg-background text-foreground overflow-x-hidden">
         <JsonLd data={buildJsonLd()} />
         <Header />
