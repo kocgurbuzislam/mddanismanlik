@@ -14,7 +14,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div>
-            <BrandLogo size="footer" />
+            <BrandLogo src={brand.logo} alt={brand.name} size="footer" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               {brand.name} ile tanışın.
             </p>

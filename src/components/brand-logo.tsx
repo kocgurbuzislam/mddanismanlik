@@ -1,20 +1,25 @@
 import Image from "next/image";
-import { siteContent } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 type BrandLogoProps = {
+  src: string;
+  alt: string;
   className?: string;
   size?: "header" | "footer";
 };
 
-export function BrandLogo({ className, size = "header" }: BrandLogoProps) {
-  const { brand } = siteContent;
+export function BrandLogo({
+  src,
+  alt,
+  className,
+  size = "header",
+}: BrandLogoProps) {
   const tall = size === "footer";
 
   return (
     <Image
-      src={brand.logo}
-      alt={brand.name}
+      src={src}
+      alt={alt}
       width={600}
       height={400}
       priority={size === "header"}

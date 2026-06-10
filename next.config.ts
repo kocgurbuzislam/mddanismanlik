@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
   experimental: {
     inlineCss: true,
     cssChunking: false,
+    optimizePackageImports: ["lucide-react"],
   },
   images: {
     qualities: [50, 75],
