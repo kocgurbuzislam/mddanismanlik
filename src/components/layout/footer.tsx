@@ -1,7 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/instagram";
 import { BrandLogo } from "@/components/brand-logo";
-import { SectionLink } from "@/components/ui/section-link";
 import { siteContent } from "@/content/site";
 import { navLinks } from "@/config/navigation";
 import { mailtoHref, mapsSearchHref, telHref } from "@/lib/contact-links";
@@ -80,13 +79,13 @@ export function Footer() {
               className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-x-4 sm:gap-y-2"
             >
               {navLinks.map((link) => (
-                <SectionLink
+                <a
                   key={link.href}
                   href={link.href}
                   className="inline-flex min-h-11 items-center rounded-lg px-2 text-sm font-medium text-muted transition-colors hover:bg-accent-soft/40 hover:text-foreground active:bg-accent-soft/60"
                 >
                   {link.label}
-                </SectionLink>
+                </a>
               ))}
             </nav>
           </div>

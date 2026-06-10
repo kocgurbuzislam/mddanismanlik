@@ -48,6 +48,7 @@ export type SiteContent = {
     completedProjectsMin: number;
     slogan: string;
     logo: string;
+    ogImage: string;
   };
   contact: {
     name: string;

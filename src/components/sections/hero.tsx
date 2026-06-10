@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowDown, Phone } from "lucide-react";
 import { siteContent } from "@/content/site";
 import { Button } from "@/components/ui/button";
-import { StatGrid } from "@/components/ui/stat-grid";
+import { StatDisplay } from "@/components/ui/stat-display";
 import { telHref } from "@/lib/contact-links";
 import { referenceEntries } from "@/content/references";
 
@@ -13,7 +13,7 @@ export function Hero() {
     <section className="relative min-h-[100svh] overflow-hidden bg-cream">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2400&q=80"
+          src="/images/hero.webp"
           alt="Şık restoran iç mekânı"
           fill
           priority
@@ -53,7 +53,7 @@ export function Hero() {
               Restoran, kafe, otel ve gıda işletmeleri için konseptten işletmeye,
               eğitimden sürdürülebilir büyümeye uçtan uca danışmanlık.
             </p>
-            <StatGrid
+            <StatDisplay
               foundedYear={brand.foundedYear}
               completedProjectsMin={brand.completedProjectsMin}
               referenceCount={referenceEntries.length}
@@ -62,7 +62,7 @@ export function Hero() {
           </div>
         </div>
 
-        <StatGrid
+        <StatDisplay
           foundedYear={brand.foundedYear}
           completedProjectsMin={brand.completedProjectsMin}
           referenceCount={referenceEntries.length}

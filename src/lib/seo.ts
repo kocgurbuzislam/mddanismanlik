@@ -47,7 +47,7 @@ export function createRootMetadata(): Metadata {
       description,
       images: [
         {
-          url: brand.logo,
+          url: brand.ogImage,
           width: 1200,
           height: 630,
           alt: seo.ogImageAlt,
@@ -58,7 +58,7 @@ export function createRootMetadata(): Metadata {
       card: "summary_large_image",
       title: defaultTitle,
       description,
-      images: [brand.logo],
+      images: [brand.ogImage],
     },
     icons: {
       icon: [
@@ -115,7 +115,7 @@ export function buildJsonLd() {
     description,
     url: siteUrl,
     logo: absoluteUrl(brand.logo),
-    image: absoluteUrl(brand.logo),
+    image: absoluteUrl(brand.ogImage),
     telephone: tel,
     email: contact.email,
     foundingDate: String(brand.foundedYear),

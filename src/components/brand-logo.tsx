@@ -15,11 +15,15 @@ export function BrandLogo({ className, size = "header" }: BrandLogoProps) {
     <Image
       src={brand.logo}
       alt={brand.name}
-      width={tall ? 450 : 360}
-      height={tall ? 300 : 240}
-      unoptimized
+      width={600}
+      height={400}
       priority={size === "header"}
       fetchPriority={size === "header" ? "high" : "auto"}
+      sizes={
+        tall
+          ? "(max-width: 640px) 220px, 300px"
+          : "(max-width: 640px) 200px, (max-width: 1024px) 240px, 300px"
+      }
       style={{ width: "auto" }}
       className={cn(
         "w-auto object-contain pointer-events-none",

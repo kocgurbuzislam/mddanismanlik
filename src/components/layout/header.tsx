@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
-import { SectionLink } from "@/components/ui/section-link";
 import { useEffect, useState, type MouseEvent } from "react";
 import { siteContent } from "@/content/site";
 import { navLinks } from "@/config/navigation";
@@ -62,13 +61,13 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <SectionLink
+            <a
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               {link.label}
-            </SectionLink>
+            </a>
           ))}
         </nav>
 
@@ -98,13 +97,13 @@ export function Header() {
             <ul className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <SectionLink
+                  <a
                     href={link.href}
-                    onNavigate={() => setOpen(false)}
+                    onClick={() => setOpen(false)}
                     className="block rounded-xl px-4 py-3 text-lg font-medium text-foreground transition-colors hover:bg-accent-soft/50"
                   >
                     {link.label}
-                  </SectionLink>
+                  </a>
                 </li>
               ))}
             </ul>

@@ -3,7 +3,7 @@ import { About } from "@/components/sections/about";
 import { Cta } from "@/components/sections/cta";
 import { Hero } from "@/components/sections/hero";
 import { Process } from "@/components/sections/process";
-import { Projects } from "@/components/sections/projects";
+import { LazyProjects } from "@/components/sections/lazy-projects";
 import { References } from "@/components/sections/references";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Process />
-      <Projects />
+      <LazyProjects />
       <References />
       <Cta />
     </main>

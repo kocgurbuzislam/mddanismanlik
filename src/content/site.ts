@@ -17,7 +17,8 @@ export const siteContent = {
     completedProjectsMin: 100,
     slogan:
       "Her işletme bir yıldız olabilir, biz onun gökyüzünü tasarlarız.",
-    logo: "/logo.png",
+    logo: "/logo.webp",
+    ogImage: "/og-image.webp",
   },
   contact: {
     name: "Mehmet Doğan",

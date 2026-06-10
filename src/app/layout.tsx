@@ -38,9 +38,6 @@ export default function RootLayout({
       lang="tr"
       className={`${playfair.variable} ${inter.variable} h-full scroll-smooth antialiased overflow-x-hidden`}
     >
-      <head>
-        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
-      </head>
       <body className="min-h-full bg-background text-foreground overflow-x-hidden">
         <JsonLd data={buildJsonLd()} />
         <Header />
