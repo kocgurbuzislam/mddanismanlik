@@ -8,6 +8,7 @@ const boroviHotelCover = "/projects/borovi-hotel/cover.webp";
 const theCrownCover = "/projects/the-crown/cover.webp";
 const qoalaBeachCover = "/projects/qoala-beach/cover.webp";
 const ritzCarltonBiceCover = "/projects/ritz-carlton-bice/cover.webp";
+const corinneHotelCover = "/projects/corinne-hotel/cover.webp";
 
 export const projectEntries: ProjectEntry[] = [
   {
@@ -178,6 +179,32 @@ export const projectEntries: ProjectEntry[] = [
       {
         src: "/projects/ritz-carlton-bice/service.webp",
         alt: "Bice Restaurant servis ve deniz ürünleri",
+      },
+    ],
+  },
+  {
+    id: "corinne-hotel",
+    title: "Corinne Hotel",
+    description:
+      "Corinne Hotel için butik otel konsepti, F&B operasyonu ve misafir deneyimi danışmanlığı sürecinde mekânın özgün kimliği güçlendirildi. Tarihi dokudaki giriş ve lobi atmosferi, çatı terası ve özel süit deneyimi; konaklama ile gastronomi sunumunu bir araya getirecek şekilde kurgulandı. Servis standartları ve operasyonel yapıyla sürdürülebilir bir butik otel modeli hedeflendi.",
+    cover: corinneHotelCover,
+    coverAlt: "Corinne Hotel giriş ve lobi",
+    images: [
+      {
+        src: corinneHotelCover,
+        alt: "Corinne Hotel giriş ve lobi",
+      },
+      {
+        src: "/projects/corinne-hotel/terrace.webp",
+        alt: "Corinne Hotel çatı terası",
+      },
+      {
+        src: "/projects/corinne-hotel/suite.webp",
+        alt: "Corinne Hotel süit ve jakuzi",
+      },
+      {
+        src: "/projects/corinne-hotel/lounge.webp",
+        alt: "Corinne Hotel lounge ve şarap odası",
       },
     ],
   },

@@ -11,6 +11,7 @@
     "optimize:nusr-et-cover": "node scripts/optimize-nusr-et-cover.mjs",
     "optimize:the-crown-cover": "node scripts/optimize-the-crown-cover.mjs",
     "optimize:ritz-carlton-bice": "node scripts/optimize-ritz-carlton-bice.mjs",
+    "optimize:corinne-hotel": "node scripts/optimize-corinne-hotel.mjs",
     "optimize:icons": "node scripts/optimize-icons.mjs",
     "optimize:logo": "node scripts/optimize-logo.mjs",
     "optimize:hero": "node scripts/optimize-hero.mjs"
