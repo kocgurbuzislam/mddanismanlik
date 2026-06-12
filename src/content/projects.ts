@@ -9,6 +9,7 @@ const theCrownCover = "/projects/the-crown/cover.webp";
 const qoalaBeachCover = "/projects/qoala-beach/cover.webp";
 const ritzCarltonBiceCover = "/projects/ritz-carlton-bice/cover.webp";
 const corinneHotelCover = "/projects/corinne-hotel/cover.webp";
+const rixosPeraCover = "/projects/rixos-pera/cover.webp";
 
 export const projectEntries: ProjectEntry[] = [
   {
@@ -205,6 +206,32 @@ export const projectEntries: ProjectEntry[] = [
       {
         src: "/projects/corinne-hotel/lounge.webp",
         alt: "Corinne Hotel lounge ve şarap odası",
+      },
+    ],
+  },
+  {
+    id: "rixos-pera",
+    title: "Rixos Pera İstanbul",
+    description:
+      "Rixos Pera İstanbul için otel F&B operasyonu, spa & wellness deneyimi ve misafir hizmetleri danışmanlığı sürecinde markanın premium konumlandırması güçlendirildi. Tarihi Pera dokusundaki lobi ve resepsiyon atmosferi, geleneksel hamam deneyimi, Şamdan kahvaltı sunumu ve çatı terası restoranı; konaklama ile gastronomi hizmetlerini bütüncül bir misafir deneyiminde buluşturacak şekilde kurgulandı. Servis standartları ve operasyonel yapıyla sürdürülebilir bir otel işletme modeli hedeflendi.",
+    cover: rixosPeraCover,
+    coverAlt: "Rixos Pera İstanbul lobi",
+    images: [
+      {
+        src: rixosPeraCover,
+        alt: "Rixos Pera İstanbul lobi ve avize",
+      },
+      {
+        src: "/projects/rixos-pera/hamam.webp",
+        alt: "Rixos Pera İstanbul hamam ve spa",
+      },
+      {
+        src: "/projects/rixos-pera/breakfast.webp",
+        alt: "Rixos Pera İstanbul Şamdan kahvaltı sunumu",
+      },
+      {
+        src: "/projects/rixos-pera/terrace.webp",
+        alt: "Rixos Pera İstanbul çatı terası restoranı",
       },
     ],
   },

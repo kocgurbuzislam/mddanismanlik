@@ -12,6 +12,7 @@
     "optimize:the-crown-cover": "node scripts/optimize-the-crown-cover.mjs",
     "optimize:ritz-carlton-bice": "node scripts/optimize-ritz-carlton-bice.mjs",
     "optimize:corinne-hotel": "node scripts/optimize-corinne-hotel.mjs",
+    "optimize:rixos-pera": "node scripts/optimize-rixos-pera.mjs",
     "optimize:icons": "node scripts/optimize-icons.mjs",
     "optimize:logo": "node scripts/optimize-logo.mjs",
     "optimize:hero": "node scripts/optimize-hero.mjs"
